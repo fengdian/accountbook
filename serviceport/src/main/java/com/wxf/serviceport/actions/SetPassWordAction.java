@@ -5,6 +5,7 @@ import com.wxf.serviceport.interfaces.INetService;
 import com.wxf.serviceport.service.UserService;
 import com.wxf.serviceport.util.Result;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import fi.iki.elonen.NanoHTTPD;
@@ -28,7 +29,6 @@ public class SetPassWordAction implements INetService {
             result.setCommon(Result.StatusEnum.SUCCESS,res);
         }catch (Exception e){
             e.printStackTrace();
-
             result.setCommon(Result.StatusEnum.ERROR);
         }
 

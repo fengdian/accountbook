@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -132,16 +133,18 @@ public class PieView <T extends Treasure>extends View {
             reslutWidth = 80 ;
             resultHeight = 80;
         }else if(MeasureSpec.AT_MOST==widthMode){
-            reslutWidth = heightSize;
+            reslutWidth = 80;
             resultHeight = heightSize;
         }else if(MeasureSpec.AT_MOST==heightMode){
             resultHeight = widthSize;
-            reslutWidth =widthSize;
+            reslutWidth =80;
         }else {
-            reslutWidth =widthSize;
-            resultHeight=heightSize;
+            reslutWidth =Math.min(widthSize,heightSize);
+            resultHeight=Math.min(widthSize,heightSize);
         }
-        setMeasuredDimension(Math.min(reslutWidth,resultHeight),Math.min(reslutWidth,resultHeight));
+        resultHeight = Math.max(reslutWidth,resultHeight);
+        reslutWidth = Math.max(reslutWidth,resultHeight);
+        setMeasuredDimension(reslutWidth,resultHeight);
     }
 
     @Override
@@ -150,7 +153,7 @@ public class PieView <T extends Treasure>extends View {
 
         canvas.translate(Math.min(reslutWidth/2,resultHeight/2),Math.min(reslutWidth/2,resultHeight/2));
         if(datas==null||sum==0||datas.size()==0){
-            defaultPaint.setTextSize(18);
+            defaultPaint.setTextSize(16);
             defaultPaint.setColor(mColors[0]);
 
             canvas.drawText(defaultStr,0- defaultPaint.measureText(defaultStr)/2,0,defaultPaint);
@@ -169,8 +172,12 @@ public class PieView <T extends Treasure>extends View {
             currentStartAngle += pie.getAngle();
             double x =  Math.cos(textAngle/180*Math.PI)*radius*0.75;
             double y = Math.sin(textAngle/180*Math.PI)*radius*0.75;
-            canvas.drawText(pie.getTreasurename(),(float) x,(float) y,dataPaint);
-            canvas.drawText(df.format(pie.getPercent() * 100) + "%",(float) x+5,(float) y+20,dataPaint);
+            Rect textRect = new Rect();
+            dataPaint.getTextBounds(pie.getTreasurename(), 0, pie.getTreasurename().length(), textRect);
+            int width = textRect.width();//文字宽
+            int height = textRect.height();//文字高
+            canvas.drawText(pie.getTreasurename(),(float) (x-width/2),(float) (y-height/2),dataPaint);
+            canvas.drawText(df.format(pie.getPercent() * 100) + "%",(float) x+-width/2+5,(float) y+height,dataPaint);
 
         }
         mPaint.setColor(0xFFFFFFFF);

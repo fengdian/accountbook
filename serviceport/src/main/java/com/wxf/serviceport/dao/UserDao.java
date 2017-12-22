@@ -69,7 +69,7 @@ public class UserDao {
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                "股票",
-                10+"",
+                0+"",
                5+"",
                 DateFormat.simdhm.format(new Date()),
                 DateFormat.simdhm.format(new Date()),
@@ -77,7 +77,7 @@ public class UserDao {
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "余额宝",
-                6+"",
+                0+"",
                 0+"",
                 DateFormat.simdhm.format(new Date()),
                 DateFormat.simdhm.format(new Date()),
@@ -85,7 +85,7 @@ public class UserDao {
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "余利宝",
-                3+"",
+                0+"",
                 0+"",
                 DateFormat.simdhm.format(new Date()),
                 DateFormat.simdhm.format(new Date()),
@@ -93,7 +93,7 @@ public class UserDao {
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "股票基金",
-                9+"",
+                0+"",
                 5+"",
                 DateFormat.simdhm.format(new Date()),
                 DateFormat.simdhm.format(new Date()),
@@ -101,7 +101,7 @@ public class UserDao {
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "其他",
-                4+"",
+                0+"",
                 2 +"",
                 DateFormat.simdhm.format(new Date()),
                 DateFormat.simdhm.format(new Date()),

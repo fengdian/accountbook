@@ -11,11 +11,21 @@ import java.io.Serializable;
 
 public class RegisterResponseData implements Serializable {
     private int  result;
+    private String error;
     public int getResult() {
         return result;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 
     public void setResult(int result) {
         this.result = result;
     }
+
 }

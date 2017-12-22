@@ -5,15 +5,15 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.wxf.accountbook.views.PieView
-     android:padding="@dimen/d_24"
+     android:padding="@dimen/d_12"
         android:id="@+id/pieview"
         app:centerText="@string/app_name"
-        app:centerTextSize="18sp"
+        app:centerTextSize="16sp"
         app:centerTextColor="@color/blue"
-        app:dataTextSize="16sp"
+        app:dataTextSize="12sp"
         app:dataTextColor="@color/blue"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
     <ListView
         android:id="@+id/lv_treasure"
         android:layout_width="match_parent"

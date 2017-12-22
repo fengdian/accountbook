@@ -47,7 +47,7 @@ public class RegisterPresenter implements RegisterContract.IRegisterPresenter {
 
                         break;
                     default:
-                        result+=response.body().getData().getResult();
+                        result+=response.body().getData().getError();
                         break;
                 }
                 registerView.toast(result);
@@ -58,7 +58,7 @@ public class RegisterPresenter implements RegisterContract.IRegisterPresenter {
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                registerView.toast("系统注册错误");
+                registerView.toast("系统异常:"+t.toString());
 
             }
         });
