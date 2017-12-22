@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PieView">
+        <!--中心字体大小-->
+        <attr name="centerTextSize" format="dimension"></attr>
+        <!--数据字体大小-->
+        <attr name="dataTextSize" format="dimension"></attr>
+        <!--中心字体颜色-->
+        <attr name="centerTextColor" format="color"></attr>
+        <!--数据字体颜色-->
+        <attr name="dataTextColor" format="color"></attr>
+        <!--中心字-->
+        <attr name="centerText" format="string"></attr>
+        <!--数据自数组颜色-->
+        <attr name="dataColors" format="reference"></attr>
+     <!--数据字内容-->
+        <attr name="dataTexts" format="reference"></attr>
+        <!--数据占比-->
+        <attr name="dataPercent" format="reference"></attr>
+    </declare-styleable>
+</resources>

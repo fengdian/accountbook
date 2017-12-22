@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.wxf.accountbook.views.PieView
+     android:padding="@dimen/d_24"
+        android:id="@+id/pieview"
+        app:centerText="@string/app_name"
+        app:centerTextSize="18sp"
+        app:centerTextColor="@color/blue"
+        app:dataTextSize="16sp"
+        app:dataTextColor="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/lv_treasure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+</LinearLayout>

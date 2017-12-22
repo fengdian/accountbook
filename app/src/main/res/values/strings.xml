@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">账本</string>
+    <string name="input_password">输入密码……</string>
+    <string name="login">登陆</string>
+    <string name="register">注册</string>
+    <string name="treasurename">财富类型：股票</string>
+    <string name="operate_type">变化类型：</string>
+    <string name="treasure_amount">财富金额：</string>
+    <string name="title_activity_treasure_item_detail">TreasureItemDetail</string>
+</resources>

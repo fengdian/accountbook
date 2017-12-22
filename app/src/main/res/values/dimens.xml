@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--一级标题大小-->
+    <dimen name="title_levelone_text_size_20">20.0sp</dimen>
+    <!--二级标题大小-->
+    <dimen name="title_leveltwo_text_size_18">18.0sp</dimen>
+    <!--三级标题大小-->
+    <dimen name="title_levelthree_text_size_16">16.0sp</dimen>
+    <dimen name="title_levelfour_text_size_14">14.0sp</dimen>
+    <dimen name="title_levelfive_text_size_12">12.0sp</dimen>
+    <dimen name="title_levelfive_text_size_11">11.0sp</dimen>
+
+
+    <dimen name="marign_lrtb">12dp</dimen>
+    <dimen name="padding_lrtb">8dp</dimen>
+    <dimen name="d_12">12dp</dimen>
+    <dimen name="d_24">24dp</dimen>
+    <dimen name="d_48">48dp</dimen>
+    <dimen name="y4">4dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>
