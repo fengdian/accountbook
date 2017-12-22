@@ -42,7 +42,7 @@ public class TreasureDetailPresenter implements TreasureItemContract.ITreasureDe
             public void onResponse(Call<TreasureChangeResponse> call, Response<TreasureChangeResponse> response) {
                 List<TreasureChangeRes> changeList =response.body().getData().getChangeList();
                 view.loadTreasureChange(changeList);
-                 view.toast("数据获取成功");
+                // view.toast("数据获取成功");
             }
 
             @Override

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.wxf.accountbook.Contracts.LoginContract;
 import com.wxf.accountbook.Contracts.RegisterContract;
 import com.wxf.accountbook.R;
+import com.wxf.accountbook.Utils;
 import com.wxf.accountbook.bases.BaseActivity;
 import com.wxf.accountbook.components.DaggerLoginComponent;
 import com.wxf.accountbook.components.DaggerRegisterComponent;
@@ -66,7 +67,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.I
     }
     @OnClick(R.id.tv_register)
     public  void register(){
-       presenter.register("root",et_pwd.getText().toString());
+       presenter.register(Utils.getUserName(),et_pwd.getText().toString());
 
     }
 

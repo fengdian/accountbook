@@ -39,6 +39,7 @@ public class TreasureDistriPresenter  implements TreasureDistriContract.Treasure
 
             @Override
             public void onFailure(Call<TreasureResponse> call, Throwable t) {
+                view.toast("加载失败");
 
             }
         });

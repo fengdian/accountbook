@@ -3,6 +3,7 @@ package com.wxf.accountbook.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.wxf.accountbook.Contracts.LoginContract;
 import com.wxf.accountbook.R;
+import com.wxf.accountbook.Utils;
 import com.wxf.accountbook.bases.BaseActivity;
 import com.wxf.accountbook.components.DaggerLoginComponent;
 import com.wxf.accountbook.modules.LoginModule;
@@ -76,7 +78,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.ILoginV
     }
     @OnClick(R.id.tv_login)
     public void login(){
-        presenter.login("root", etPassword.getText().toString());
+
+
+        presenter.login(Utils.getUserName(), etPassword.getText().toString());
     }
     @OnClick(R.id.tv_register)
     public  void register(){

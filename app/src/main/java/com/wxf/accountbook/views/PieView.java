@@ -117,8 +117,13 @@ public class PieView <T extends Treasure>extends View {
             ((PieTreasure)datas.get(i)).setColor(mColors[i%mColors.length]);
         }
         for(int i =0;i<datas.size();i++){
-            ((PieTreasure)datas.get(i)).setPercent((float) (datas.get(i).getMoney()*1.0/sum));
-            ((PieTreasure)datas.get(i)).setAngle((float) (((PieTreasure)datas.get(i)).getPercent()*360));
+            if(sum==0){
+                ((PieTreasure) datas.get(0)).setPercent(0);
+                ((PieTreasure) datas.get(0)).setAngle(360);
+            }else {
+                ((PieTreasure) datas.get(i)).setPercent((float) (datas.get(i).getMoney() * 1.0 / sum));
+                ((PieTreasure) datas.get(i)).setAngle((float) (((PieTreasure) datas.get(i)).getPercent() * 360));
+            }
         }
     }
 
@@ -152,10 +157,10 @@ public class PieView <T extends Treasure>extends View {
         super.onDraw(canvas);
 
         canvas.translate(Math.min(reslutWidth/2,resultHeight/2),Math.min(reslutWidth/2,resultHeight/2));
-        if(datas==null||sum==0||datas.size()==0){
-            defaultPaint.setTextSize(16);
+        if(datas==null||datas.size()==0){
+            defaultPaint.setTextSize(centerTextSize);
             defaultPaint.setColor(mColors[0]);
-
+            defaultPaint.setAntiAlias(true);
             canvas.drawText(defaultStr,0- defaultPaint.measureText(defaultStr)/2,0,defaultPaint);
             return;
 
@@ -167,7 +172,7 @@ public class PieView <T extends Treasure>extends View {
         for(int i = 0;i<datas.size();i++){
 
             PieTreasure pie= (PieTreasure) datas.get(i);
-            if(pie.getMoney()<1||pie.getPercent()<0.01){
+            if(pie.getAngle()<1){
                 continue;
             }
             mPaint.setColor(pie.getColor());

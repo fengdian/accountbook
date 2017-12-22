@@ -43,4 +43,13 @@ public class Utils {
         }
         return result;
     }
+
+    /**
+     * 设备唯一参数
+     * @return
+     */
+    public static String getUserName(){
+        String serial=android.os.Build.SERIAL;
+        return  serial;
+    }
 }
