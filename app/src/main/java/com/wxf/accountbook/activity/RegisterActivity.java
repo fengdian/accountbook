@@ -41,6 +41,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.I
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DaggerRegisterComponent.builder().registerModule(new RegisterModule(this)).build().inject(this);
+
     }
 
     @Override

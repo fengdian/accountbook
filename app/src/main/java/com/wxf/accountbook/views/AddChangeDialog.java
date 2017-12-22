@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wxf.accountbook.R;
 import com.wxf.accountbook.adapters.TypeSelectAdapter;
@@ -79,6 +80,14 @@ public class AddChangeDialog extends Dialog {
     }
     @OnClick(R.id.ensure)
     public  void addChange(View view){
+         if((int)(Float.parseFloat(treasure_amount.getText().toString().trim())*100)<0){
+             Toast.makeText(context,"输入不能为负",Toast.LENGTH_SHORT).show();
+             return;
+         }
+         if(incomeType.getIncome()==-1&&  pieTreasure.getMoney()<(Float.parseFloat(treasure_amount.getText().toString().trim())*100)){
+             Toast.makeText(context,"资产变化后不能为负",Toast.LENGTH_SHORT).show();
+             return;
+         }
         if(listener!=null){
            listener.onClick(incomeType.getId(),(int)(Float.parseFloat(treasure_amount.getText().toString().trim())*100),incomeType.getIncome());
         }

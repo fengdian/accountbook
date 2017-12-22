@@ -141,6 +141,8 @@ public class TreasureService {
     public  static  Map getTreasureChangeList(String treasureId,int pageIndex,int pageSize)throws Exception{
         Map map =new HashMap();
         int result =0;
+        pageIndex = 0;
+        pageSize =30;
        List<TreasureChange> changeList = TreasureDao.getTreasureChanges(treasureId,pageIndex,pageSize);
        map.put("result",result);
         map.put("changeList",changeList);

@@ -9,9 +9,9 @@
         android:id="@+id/pieview"
         app:centerText="@string/app_name"
         app:centerTextSize="16sp"
-        app:centerTextColor="@color/blue"
+        app:centerTextColor="@color/black"
         app:dataTextSize="12sp"
-        app:dataTextColor="@color/blue"
+        app:dataTextColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     <ListView

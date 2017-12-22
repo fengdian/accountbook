@@ -45,7 +45,7 @@ public class PieView <T extends Treasure>extends View {
     List<T> datas;
     private int sum= 0;
 
-    private int[] mColors = {0xFFCCFF00, 0xFF6495ED, 0xFFE32636, 0xFF800000, 0xFF808000, 0xFFFF8C69, 0xFF808080,
+    private int[] mColors = {0xFF9CaF00, 0xFF6495ED, 0xFFE32636, 0xFF800000, 0xFF808000, 0xFFFF8C69, 0xFF808080,
             0xFFE6B800, 0xFF7CFC00};
     public PieView(Context context) {
         this(context,null);
@@ -165,7 +165,11 @@ public class PieView <T extends Treasure>extends View {
         float currentStartAngle = 0;
         DecimalFormat df = new DecimalFormat("0.00");
         for(int i = 0;i<datas.size();i++){
+
             PieTreasure pie= (PieTreasure) datas.get(i);
+            if(pie.getMoney()<1||pie.getPercent()<0.01){
+                continue;
+            }
             mPaint.setColor(pie.getColor());
             canvas.drawArc(rect,currentStartAngle,pie.getAngle(),true,mPaint);
             float textAngle= currentStartAngle+pie.getAngle()/2;

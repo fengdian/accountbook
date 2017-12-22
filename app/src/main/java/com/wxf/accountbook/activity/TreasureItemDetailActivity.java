@@ -44,6 +44,10 @@ public class TreasureItemDetailActivity extends BaseActivity  implements Treasur
    PieTreasure pieTreasure;
    TreasureChangeAdapter adapter;
     AddChangeDialog dialog;
+    private int inCome;
+    private  int money;
+    private int tId;
+
     @Override
     public void toast(String message) {
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
@@ -65,12 +69,24 @@ public class TreasureItemDetailActivity extends BaseActivity  implements Treasur
     public void addChangeSuccess(String message) {
         toast(message);
         dialog.dismiss();
+        if(inCome ==0){
+            if(tId==5){
+                pieTreasure.setMoney(pieTreasure.getMoney()+money);
+            }else  if(tId==6){
+                pieTreasure.setMoney(pieTreasure.getMoney()-money);
+            }
+        }else if(inCome ==2){
+            pieTreasure.setMoney(money);
+        }else{
+            pieTreasure.setMoney(pieTreasure.getMoney()+money*inCome);
+        }
         presenter.loadTreasureChange(pieTreasure.getId(),1,10);
     }
 
     @Override
     public void loadTreasureChange(List<TreasureChangeRes> list) {
         adapter.updateData(list);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -82,6 +98,9 @@ public class TreasureItemDetailActivity extends BaseActivity  implements Treasur
         dialog.setListener(new AddChangeDialog.EnsureClickListener() {
             @Override
             public void onClick(int id, int amount,int income) {
+                inCome = income;
+                money = amount;
+                tId = id;
                presenter.addTreasureChange(pieTreasure.getId(),amount,income,id);
             }
         });
