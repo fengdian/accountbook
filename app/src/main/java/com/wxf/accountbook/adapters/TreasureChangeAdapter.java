@@ -1,6 +1,7 @@
 package com.wxf.accountbook.adapters;
 
 import android.content.Context;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,7 +81,7 @@ public class TreasureChangeAdapter extends BaseAdapter {
         }
         public  void updateView(TreasureChangeRes change){
 
-            tv.setText(change.getCreatetime()+"\t"+ Utils.getIncomeInfo(change.getType())+"\t"+df.format(change.getMoney()*1.0/100)+"元");
+            tv.setText(Html.fromHtml(change.getCreatetime()+"\t"+ Utils.getIncomeInfo(change.getType())+"\t"+df.format(change.getMoney()*1.0/100)+"元"));
             Log.i("wxf", "updateView更新数据: "+tv.getText().toString());
         }
     }

@@ -16,6 +16,7 @@ import com.wxf.accountbook.entry.PieTreasure;
 import com.wxf.accountbook.modules.TreasureDistriModule;
 import com.wxf.accountbook.presenter.TreasureDistriPresenter;
 import com.wxf.accountbook.views.PieView;
+import com.wxf.accountbook.views.RemindDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +74,21 @@ public class TreasureDistriActivity extends BaseActivity implements TreasureDist
         adapter.notifyDataSetChanged();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        RemindDialog remindDialog = new RemindDialog(this);
+        remindDialog.show();
+        remindDialog.setContent("你确定要退出？");
+        remindDialog.setTitleMessage("退出");
+        remindDialog.setLisenter(new RemindDialog.EnsureLisenter() {
+            @Override
+            public void ensure() {
+                finish();
+                backAnim();
+            }
+        });
     }
 
     @Override
