@@ -89,7 +89,11 @@ public class TreasureService {
                 money = -money;
             }
         }
-        TreasureDao.updateTreasureByid(treasureid,money);
+        if(income ==2){
+            TreasureDao.updateTreasureByid2(treasureid, money);
+        }else {
+            TreasureDao.updateTreasureByid(treasureid, money);
+        }
         map.put("result",result);
         return map;
     }
