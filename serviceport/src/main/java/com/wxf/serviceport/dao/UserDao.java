@@ -56,7 +56,7 @@ public class UserDao {
                 password.getUpdatetime(),
                 password.getIsdelete()+""});
         //初始化类型DateFormat.simdhm.format(new Date())
-     String d =DateFormat.simdhm.format(new Date());
+     String d =DateFormat.simdt.format(new Date());
         sql="insert into incometype(id,info,income,isdelete,createtime,updatetime ) values (0,'收入',1,0,?,?),(1,'支出',-1,0,?,?),(2,'亏损',-1,0,?,?),(3,'盈利',1,0,?,?),(4,'金额变化',2,0,?,?),(5,'转入',0,0,?,?),(6,'转出',0,0,?,?)";
         db.execSQL(sql,new String[]{d,d,d,d,d,d,d,d,d,d,d,d,d,d});
          sql="insert into treasuretype(id" +

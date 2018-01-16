@@ -77,8 +77,8 @@ public class TreasureDao {
                 type.getTreasurename(),
                 type.getMoney()+"",
                 type.getDanger()+"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
         return 0;
     }
@@ -97,7 +97,7 @@ public class TreasureDao {
                 type.getTreasurename(),
                 type.getMoney()+""
                 ,type.getDanger()+"",
-                DateFormat.simdhm.format(new Date()),type.getId()});
+                DateFormat.simdt.format(new Date()),type.getId()});
 
         return  0;
     }
@@ -134,8 +134,8 @@ public class TreasureDao {
                 item.getTreasureid(),
                 item.getMoney()+"",
                 item.getType()+"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
         return 0;
     }
