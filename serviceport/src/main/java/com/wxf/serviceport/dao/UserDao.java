@@ -71,40 +71,40 @@ public class UserDao {
                "股票",
                 0+"",
                5+"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "余额宝",
                 0+"",
                 0+"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "余利宝",
                 0+"",
                 0+"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "股票基金",
                 0+"",
                 5+"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
         db.execSQL(sql,new String[]{
                 UUIDUtil.getUUID(),
                 "其他",
                 0+"",
                 2 +"",
-                DateFormat.simdhm.format(new Date()),
-                DateFormat.simdhm.format(new Date()),
+                DateFormat.simdt.format(new Date()),
+                DateFormat.simdt.format(new Date()),
                 0+""});
 
          return  0;
