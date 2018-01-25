@@ -154,7 +154,7 @@ public class TreasureDao {
    }
    public  static void  updateTreasureByid(String id,int money){
        SQLiteDatabase db = DBInstance.getDatabaseHelper().getReadableDatabase();
-       String sql="update treasuretype set money=money+"+money +" where id=?";
+       String sql="update treasuretype set money="+money +" where id=?";
        db.execSQL(sql,new String[]{id});
    }
     public  static List<Treasure>  getTreasureByid(String id)throws  Exception{

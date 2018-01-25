@@ -90,7 +90,7 @@ public class TreasureService {
             }
         }
         if(income ==2){
-            TreasureDao.updateTreasureByid2(treasureid, money);
+            TreasureDao.updateTreasureByid(treasureid, money);
         }else {
             TreasureDao.updateTreasureByid(treasureid, money);
         }
