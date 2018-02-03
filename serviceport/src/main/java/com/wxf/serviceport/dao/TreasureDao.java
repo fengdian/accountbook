@@ -152,9 +152,14 @@ public class TreasureDao {
        return  list;
 
    }
-   public  static void  updateTreasureByid(String id,int money){
+   public  static void  updateTreasureByid(String id,int money,boolean isAdd){
        SQLiteDatabase db = DBInstance.getDatabaseHelper().getReadableDatabase();
-       String sql="update treasuretype set money="+money +" where id=?";
+       String sql="";
+       if(isAdd){
+           sql="update treasuretype set money=money+"+money +" where id=?";
+       }else {
+           sql = "update treasuretype set money=" + money + " where id=?";
+       }
        db.execSQL(sql,new String[]{id});
    }
     public  static List<Treasure>  getTreasureByid(String id)throws  Exception{
