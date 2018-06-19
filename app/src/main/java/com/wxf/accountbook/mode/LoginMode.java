@@ -23,7 +23,9 @@ import rx.Observable;
 
 public class LoginMode implements LoginContract.ILoginMode {
     @Inject
-    public  LoginMode(){}
+    public  LoginMode(){
+        System.out.println("----------LoginMode---------------");
+    }
     @Override
     public   Call<LoginResponse> login(String deviceId, String password) {
         Retrofit retrofit =  new Retrofit.Builder()

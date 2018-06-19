@@ -40,8 +40,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.ILoginV
     @BindView(R.id.tv_register)
     TextView tvRegister;
     @Inject
-    String game;
-    @Inject
     LoginPresenter presenter;
 
 

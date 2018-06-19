@@ -41,6 +41,7 @@ public class LoginPresenter implements LoginContract.ILoginPresenter {
                 Log.i("wxf", "onResponse:登陆结果 "+response.body().getData().getResult());
                 LoginResponseData data = response.body().getData();
                 String result="未知错误";
+                Log.i("login", "login onResponse: "+data.getResult());
                 switch (data.getResult()){
                     case 0:
                         result="登陆成功";

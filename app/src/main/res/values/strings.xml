@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">流水账</string>
+    <string name="app_name">理财账本</string>
     <string name="input_password">输入密码……</string>
     <string name="login">登陆</string>
     <string name="register">注册</string>
