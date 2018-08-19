@@ -63,6 +63,7 @@ public class PieView <T extends Treasure>extends View {
          centerTextColor = a.getColor(R.styleable.PieView_centerTextColor,0x00000000);
          dataTextColor   = a.getColor(R.styleable.PieView_dataTextColor,0x00000000);
          centerText    = a.getString(R.styleable.PieView_centerText);
+        a.recycle();
         centerTextPaint= new Paint();
         centerTextPaint.setColor(centerTextColor);
         centerTextPaint.setTextSize(centerTextSize);
@@ -79,6 +80,7 @@ public class PieView <T extends Treasure>extends View {
         defaultPaint=new Paint();
         defaultPaint.setStyle(Paint.Style.FILL);
         defaultPaint.setAntiAlias(true);
+
        /* List<PieTreasure> pieTreasureList = new ArrayList<>();
         for(int i=0;i<6;i++){
             PieTreasure pieTreasure = new PieTreasure();
